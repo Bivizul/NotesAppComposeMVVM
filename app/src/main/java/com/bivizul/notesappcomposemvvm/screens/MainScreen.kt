@@ -37,9 +37,6 @@ fun MainScreen(navController: NavHostController) {
     val mainViewModel: MainViewModel =
         viewModel(factory = MainViewModelFactory(context.applicationContext as Application))
 
-    // Хранение списка заметок
-    val notes = mainViewModel.notesTest.observeAsState(listOf()).value
-
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(onClick = {
@@ -74,11 +71,11 @@ fun MainScreen(navController: NavHostController) {
                 navController = navController
             )
         }*/
-        LazyColumn {
-            items(notes){ note ->
-                NoteItem(note = note, navController = navController)
-            }
-        }
+//        LazyColumn {
+//            items(notes){ note ->
+//                NoteItem(note = note, navController = navController)
+//            }
+//        }
 
 
     }

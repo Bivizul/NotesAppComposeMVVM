@@ -42,9 +42,12 @@ fun StartScreen(navController: NavHostController) {
             Button(
                 onClick = {
                     // Передает информацию - на какую кнопку было нажатие
-                    mainViewModel.initDatabase(TYPE_ROOM)
+                    // Навигацию передаем в callback
+                    mainViewModel.initDatabase(TYPE_ROOM){
+                        navController.navigate(route = NavRoute.MainScreen.route)
+                    }
 
-                    navController.navigate(route = NavRoute.MainScreen.route)
+
                 },
                 modifier = Modifier
                     .width(200.dp)
@@ -54,8 +57,10 @@ fun StartScreen(navController: NavHostController) {
             }
             Button(
                 onClick = {
-                    mainViewModel.initDatabase(TYPE_FIREBASE)
-                    navController.navigate(route = NavRoute.MainScreen.route)
+                    mainViewModel.initDatabase(TYPE_FIREBASE){
+                        navController.navigate(route = NavRoute.MainScreen.route)
+                    }
+
                 },
                 modifier = Modifier
                     .width(200.dp)
