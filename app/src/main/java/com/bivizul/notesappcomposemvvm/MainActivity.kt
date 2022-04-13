@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.bivizul.notesappcomposemvvm.navigation.NotesNavHostController
 import com.bivizul.notesappcomposemvvm.ui.theme.NotesAppComposeMVVMTheme
+import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.NOTES_APP
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(topBar = {
                     TopAppBar(
                         title = {
-                            Text(text = "Notes App")
+                            Text(text = NOTES_APP)
                         },
                         backgroundColor = Color.Blue,
                         contentColor = Color.White,
@@ -47,11 +48,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-//    @Preview(showBackground = true)
-//    @Composable
-//    fun DefaultPreview() {
-//        NotesAppComposeMVVMTheme {
-//
-//        }
-//    }
+    @Preview(showBackground = true)
+    @Composable
+    fun DefaultPreview() {
+        NotesAppComposeMVVMTheme {
+
+        }
+    }
 }

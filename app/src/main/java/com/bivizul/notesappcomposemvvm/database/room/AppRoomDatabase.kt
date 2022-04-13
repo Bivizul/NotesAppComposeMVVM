@@ -1,11 +1,12 @@
-package com.bivizul.notesappcomposemvvm.room
+package com.bivizul.notesappcomposemvvm.database.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.bivizul.notesappcomposemvvm.model.Note
-import com.bivizul.notesappcomposemvvm.room.dao.NoteRoomDao
+import com.bivizul.notesappcomposemvvm.database.room.dao.NoteRoomDao
+import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.NOTES_DATABASE
 
 // Локальная база данных Room
 // База данных Room
@@ -27,7 +28,7 @@ abstract class AppRoomDatabase : RoomDatabase() {
                 INSTANCE = Room.databaseBuilder(
                     context,
                     AppRoomDatabase::class.java,
-                    "note_database"
+                    NOTES_DATABASE
                 ).build()
                 INSTANCE as AppRoomDatabase
             } else {

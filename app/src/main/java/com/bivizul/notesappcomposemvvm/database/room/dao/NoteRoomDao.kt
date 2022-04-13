@@ -1,4 +1,4 @@
-package com.bivizul.notesappcomposemvvm.room.dao
+package com.bivizul.notesappcomposemvvm.database.room.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

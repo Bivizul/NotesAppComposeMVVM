@@ -1,13 +1,13 @@
-package com.bivizul.notesappcomposemvvm.room.repository
+package com.bivizul.notesappcomposemvvm.database.room.repository
 
 import androidx.lifecycle.LiveData
 import com.bivizul.notesappcomposemvvm.database.DatabaseRepository
+import com.bivizul.notesappcomposemvvm.database.room.dao.NoteRoomDao
 import com.bivizul.notesappcomposemvvm.model.Note
-import com.bivizul.notesappcomposemvvm.room.dao.NoteRoomDao
 
 
 // Локальный репозиторий
-class RoomRepository(private val noteRoomDao: NoteRoomDao): DatabaseRepository {
+class RoomRepository(private val noteRoomDao: NoteRoomDao) : DatabaseRepository {
 
     override val readAll: LiveData<List<Note>>
         get() = noteRoomDao.getAllNotes()

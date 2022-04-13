@@ -18,6 +18,9 @@ import com.bivizul.notesappcomposemvvm.MainViewModel
 import com.bivizul.notesappcomposemvvm.MainViewModelFactory
 import com.bivizul.notesappcomposemvvm.navigation.NavRoute
 import com.bivizul.notesappcomposemvvm.ui.theme.NotesAppComposeMVVMTheme
+import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.FIREBASE_DATABASE
+import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.ROOM_DATABASE
+import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.WHATS_WILL_WE_USE
 import com.bivizul.notesappcomposemvvm.utils.TYPE_FIREBASE
 import com.bivizul.notesappcomposemvvm.utils.TYPE_ROOM
 
@@ -38,7 +41,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = "What will we use?")
+            Text(text = WHATS_WILL_WE_USE)
             // Room database
             Button(
                 onClick = {
@@ -54,7 +57,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                     .width(200.dp)
                     .padding(vertical = 8.dp)
             ) {
-                Text(text = "Room database")
+                Text(text = ROOM_DATABASE)
             }
             // Firebase database
             Button(
@@ -68,7 +71,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                     .width(200.dp)
                     .padding(vertical = 8.dp)
             ) {
-                Text(text = "Firebase database")
+                Text(text = FIREBASE_DATABASE)
             }
         }
 

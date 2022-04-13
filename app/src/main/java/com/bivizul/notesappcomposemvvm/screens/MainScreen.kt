@@ -28,6 +28,7 @@ import com.bivizul.notesappcomposemvvm.MainViewModelFactory
 import com.bivizul.notesappcomposemvvm.model.Note
 import com.bivizul.notesappcomposemvvm.navigation.NavRoute
 import com.bivizul.notesappcomposemvvm.ui.theme.NotesAppComposeMVVMTheme
+import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.ADD_ICONS
 
 // Создаем главный экран
 @Composable
@@ -41,7 +42,7 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
                 navController.navigate(route = NavRoute.AddScreen.route)
             }) {
                 Icon(
-                    imageVector = Icons.Filled.Add, contentDescription = "Add Icons",
+                    imageVector = Icons.Filled.Add, contentDescription = ADD_ICONS,
                     tint = Color.White
                 )
             }
@@ -65,7 +66,7 @@ fun NoteItem(note: Note, navController: NavHostController) {
             .fillMaxWidth()
             .padding(vertical = 8.dp, horizontal = 24.dp)
             .clickable {
-                navController.navigate(route = NavRoute.NoteScreen.route)
+                navController.navigate(route = NavRoute.NoteScreen.route + "/${note.id}")
             },
         elevation = 6.dp
     ) {
