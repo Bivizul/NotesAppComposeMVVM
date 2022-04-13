@@ -23,7 +23,7 @@ import com.bivizul.notesappcomposemvvm.utils.TYPE_ROOM
 
 // Создаем стартовый экран
 @Composable
-fun StartScreen(navController: NavHostController) {
+fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
 
     // Переменные для обработки кликов
     val context = LocalContext.current
@@ -79,6 +79,11 @@ fun StartScreen(navController: NavHostController) {
 @Composable
 fun previewStartScreen() {
     NotesAppComposeMVVMTheme {
-        StartScreen(navController = rememberNavController())
+        val context = LocalContext.current
+        val mainViewModel: MainViewModel =
+            viewModel(
+                factory = MainViewModelFactory(context.applicationContext as Application)
+            )
+        StartScreen(navController = rememberNavController(), viewModel = mainViewModel)
     }
 }

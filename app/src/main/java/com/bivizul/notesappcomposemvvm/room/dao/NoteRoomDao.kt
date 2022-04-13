@@ -5,10 +5,7 @@ import androidx.room.*
 import com.bivizul.notesappcomposemvvm.model.Note
 
 // Data access object
-<<<<<<< HEAD
 // Здесь функции для работы с локальной базой данных
-=======
->>>>>>> origin/Branch-4
 @Dao
 interface NoteRoomDao {
 

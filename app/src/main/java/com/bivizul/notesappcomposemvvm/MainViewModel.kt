@@ -2,16 +2,15 @@ package com.bivizul.notesappcomposemvvm
 
 import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.bivizul.notesappcomposemvvm.model.Note
 import com.bivizul.notesappcomposemvvm.room.AppRoomDatabase
 import com.bivizul.notesappcomposemvvm.room.repository.RoomRepository
 import com.bivizul.notesappcomposemvvm.utils.REPOSITORY
 import com.bivizul.notesappcomposemvvm.utils.TYPE_FIREBASE
 import com.bivizul.notesappcomposemvvm.utils.TYPE_ROOM
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
@@ -29,6 +28,22 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+    // Добавление заметки в локальную базу данных
+    fun addNote(note: Note, onSuccess: () -> Unit){
+        // Запускаем в потоке InputOutput создачу заметки
+        viewModelScope.launch(Dispatchers.IO){
+            REPOSITORY.create(note = note){
+                // Запускаем в главном потоке callback
+                viewModelScope.launch(Dispatchers.Main){
+                    onSuccess()
+                }
+            }
+        }
+    }
+
+    // Загрузка заметок из локальной базы данных Room
+    fun readAllNotes() = REPOSITORY.readAll
 
 }
 
