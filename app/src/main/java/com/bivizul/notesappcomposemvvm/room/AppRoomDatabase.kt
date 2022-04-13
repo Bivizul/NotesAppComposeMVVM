@@ -7,7 +7,11 @@ import androidx.room.RoomDatabase
 import com.bivizul.notesappcomposemvvm.model.Note
 import com.bivizul.notesappcomposemvvm.room.dao.NoteRoomDao
 
+<<<<<<< HEAD
 // Локальная база данных Room
+=======
+// База данных Room
+>>>>>>> origin/Branch-4
 @Database(entities = [Note::class], version = 1)
 abstract class AppRoomDatabase : RoomDatabase() {
 
@@ -15,8 +19,11 @@ abstract class AppRoomDatabase : RoomDatabase() {
 
     companion object {
 
+<<<<<<< HEAD
         // @Volatile - значение этой переменной может изменяться другими потоками только атомарно
         // Придает атомарность - либо выполняется целиком, либо не выпоняется вообще
+=======
+>>>>>>> origin/Branch-4
         @Volatile
         private var INSTANCE: AppRoomDatabase? = null
 

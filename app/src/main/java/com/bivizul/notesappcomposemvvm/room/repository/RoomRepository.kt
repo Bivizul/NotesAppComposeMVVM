@@ -5,7 +5,10 @@ import com.bivizul.notesappcomposemvvm.database.DatabaseRepository
 import com.bivizul.notesappcomposemvvm.model.Note
 import com.bivizul.notesappcomposemvvm.room.dao.NoteRoomDao
 
+<<<<<<< HEAD
 // Локальный репозиторий
+=======
+>>>>>>> origin/Branch-4
 class RoomRepository(private val noteRoomDao: NoteRoomDao): DatabaseRepository {
 
     override val readAll: LiveData<List<Note>>
