@@ -78,7 +78,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                             PASSWORD = password
                             viewModel.initDatabase(TYPE_FIREBASE){
                                 Log.d("checkData", "Auth success")
-//                                navController.navigate(NavRoute.MainScreen.route)
+                                navController.navigate(NavRoute.MainScreen.route)
                             }
                         },
                         enabled = login.isNotEmpty() && password.isNotEmpty()
@@ -90,7 +90,6 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
             }
         }
     ) {
-
         Scaffold(
             modifier = Modifier.fillMaxSize()
         ) {
@@ -108,8 +107,6 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                         viewModel.initDatabase(TYPE_ROOM) {
                             navController.navigate(route = NavRoute.MainScreen.route)
                         }
-
-
                     },
                     modifier = Modifier
                         .width(200.dp)
