@@ -29,6 +29,10 @@ import com.bivizul.notesappcomposemvvm.model.Note
 import com.bivizul.notesappcomposemvvm.navigation.NavRoute
 import com.bivizul.notesappcomposemvvm.ui.theme.NotesAppComposeMVVMTheme
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.ADD_ICONS
+import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.EMPTY
+import com.bivizul.notesappcomposemvvm.utils.DB_TYPE
+import com.bivizul.notesappcomposemvvm.utils.TYPE_FIREBASE
+import com.bivizul.notesappcomposemvvm.utils.TYPE_ROOM
 
 // Создаем главный экран
 @Composable
@@ -61,12 +65,17 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
 
 @Composable
 fun NoteItem(note: Note, navController: NavHostController) {
+    val noteId = when(DB_TYPE){
+        TYPE_FIREBASE -> note.firebaseId
+        TYPE_ROOM -> note.id
+        else -> EMPTY
+    }
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp, horizontal = 24.dp)
             .clickable {
-                navController.navigate(route = NavRoute.NoteScreen.route + "/${note.id}")
+                navController.navigate(route = NavRoute.NoteScreen.route + "/${noteId}")
             },
         elevation = 6.dp
     ) {
@@ -89,7 +98,7 @@ fun NoteItem(note: Note, navController: NavHostController) {
 
 @Preview(showBackground = true)
 @Composable
-fun previewMainScreen() {
+fun PreviewMainScreen() {
     NotesAppComposeMVVMTheme {
         val context = LocalContext.current
         val mainViewModel: MainViewModel =

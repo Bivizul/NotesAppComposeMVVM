@@ -81,15 +81,13 @@ fun AddScreen(navController: NavHostController, viewModel: MainViewModel) {
             ) {
                 Text(text = ADD_NOTE)
             }
-
-
         }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun previewAddScreen() {
+fun PreviewAddScreen() {
     NotesAppComposeMVVMTheme {
         val context = LocalContext.current
         val mainViewModel: MainViewModel =

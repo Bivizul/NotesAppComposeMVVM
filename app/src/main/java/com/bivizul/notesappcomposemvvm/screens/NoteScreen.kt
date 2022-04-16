@@ -25,11 +25,13 @@ import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.DELETE
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.EDIT_NOTE
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.EMPTY
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.NAV_BACK
-import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.NONE
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.SUBTITLE
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.TITLE
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.UPDATE
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.UPDATE_NOTE
+import com.bivizul.notesappcomposemvvm.utils.DB_TYPE
+import com.bivizul.notesappcomposemvvm.utils.TYPE_FIREBASE
+import com.bivizul.notesappcomposemvvm.utils.TYPE_ROOM
 import kotlinx.coroutines.launch
 
 // Создаем экран заметки
@@ -41,7 +43,15 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
     val notes = viewModel.readAllNotes().observeAsState(listOf()).value
 
     // Текущая заметка
-    val note = notes.firstOrNull { it.id == noteId?.toInt() } ?: Note(title = NONE, subtitle = NONE)
+    val note = when(DB_TYPE){
+        TYPE_ROOM -> {
+            notes.firstOrNull { it.id == noteId?.toInt() } ?: Note()
+        }
+        TYPE_FIREBASE -> {
+            notes.firstOrNull{it.firebaseId == noteId} ?: Note()
+        }
+        else -> Note()
+    }
 
     // Состояние ModalSheet
     val bottomSheetState = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
@@ -90,7 +100,8 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
                                 note = Note(
                                     id = note.id,
                                     title = title,
-                                    subtitle = subtitle
+                                    subtitle = subtitle,
+                                    firebaseId = note.firebaseId
                                 )
                             ) {
                                 navController.navigate(NavRoute.MainScreen.route)
@@ -181,7 +192,7 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
 
 @Preview(showBackground = true)
 @Composable
-fun previewNoteScreen() {
+fun PreviewNoteScreen() {
     NotesAppComposeMVVMTheme {
         val context = LocalContext.current
         val mainViewModel: MainViewModel =

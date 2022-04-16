@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    val context = application
+    private val context = application
 
     // Инициализация базы данных
     fun initDatabase(type: String, onSuccess: () -> Unit) {
@@ -34,7 +34,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 REPOSITORY = AppFirebaseRepository()
                 REPOSITORY.connectToDatabase(
                     { onSuccess() },
-                    {Log.d("checkData","Error: $it")}
+                    { Log.d("checkData", "Error: $it") }
                 )
 
             }
@@ -55,10 +55,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // Обновление заметки
-    fun updateNote(note: Note,onSuccess: () -> Unit){
-        viewModelScope.launch(Dispatchers.IO){
-            REPOSITORY.update(note = note){
-                viewModelScope.launch(Dispatchers.Main){
+    fun updateNote(note: Note, onSuccess: () -> Unit) {
+        viewModelScope.launch(Dispatchers.IO) {
+            REPOSITORY.update(note = note) {
+                viewModelScope.launch(Dispatchers.Main) {
                     onSuccess()
                 }
             }
@@ -66,10 +66,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // Удаление заметки
-    fun deleteNote(note: Note, onSuccess: () -> Unit){
-        viewModelScope.launch(Dispatchers.IO){
-            REPOSITORY.delete(note = note){
-                viewModelScope.launch(Dispatchers.Main){
+    fun deleteNote(note: Note, onSuccess: () -> Unit) {
+        viewModelScope.launch(Dispatchers.IO) {
+            REPOSITORY.delete(note = note) {
+                viewModelScope.launch(Dispatchers.Main) {
                     onSuccess()
                 }
             }

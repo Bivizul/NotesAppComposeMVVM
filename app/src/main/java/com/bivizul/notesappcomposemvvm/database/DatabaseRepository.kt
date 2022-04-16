@@ -3,7 +3,6 @@ package com.bivizul.notesappcomposemvvm.database
 import androidx.lifecycle.LiveData
 import com.bivizul.notesappcomposemvvm.model.Note
 
-
 // Главный репозиторий БД
 // Задаем что будет уметь делать репозиторий
 interface DatabaseRepository {

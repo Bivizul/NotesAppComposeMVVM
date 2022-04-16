@@ -14,7 +14,6 @@ class AllNotesLiveData : LiveData<List<Note>>() {
     private val mAuth = FirebaseAuth.getInstance()
     private val database = Firebase.database.reference.child(mAuth.currentUser?.uid.toString())
 
-
     private val listener = object : ValueEventListener{
 
         override fun onDataChange(snapshot: DataSnapshot) {
@@ -24,7 +23,6 @@ class AllNotesLiveData : LiveData<List<Note>>() {
                 notes.add(it.getValue(Note::class.java) ?: Note())
             }
             value = notes
-
         }
 
         override fun onCancelled(error: DatabaseError) {}
