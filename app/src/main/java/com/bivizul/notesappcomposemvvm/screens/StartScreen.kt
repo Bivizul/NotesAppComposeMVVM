@@ -77,7 +77,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                             LOGIN = login
                             PASSWORD = password
                             viewModel.initDatabase(TYPE_FIREBASE){
-                                DB_TYPE = TYPE_FIREBASE
+                                DB_TYPE.value = TYPE_FIREBASE
                                 Log.d("checkData", "Auth success")
                                 navController.navigate(NavRoute.MainScreen.route)
                             }
@@ -106,7 +106,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                         // Передает информацию - на какую кнопку было нажатие
                         // Навигацию передаем в callback
                         viewModel.initDatabase(TYPE_ROOM) {
-                            DB_TYPE = TYPE_ROOM
+                            DB_TYPE.value = TYPE_ROOM
                             navController.navigate(route = NavRoute.MainScreen.route)
                         }
                     },

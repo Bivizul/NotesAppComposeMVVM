@@ -1,6 +1,7 @@
 package com.bivizul.notesappcomposemvvm.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -24,9 +25,8 @@ sealed class NavRoute(val route: String) {
 }
 
 @Composable
-fun NotesNavHostController(mainViewModel: MainViewModel) {
-    // Создаем NavController
-    val navController = rememberNavController()
+fun NotesNavHostController(mainViewModel: MainViewModel, navController: NavHostController) {
+
 
     // Задаем navController и стартовый экран
     NavHost(navController = navController, startDestination = NavRoute.StartScreen.route) {
@@ -49,7 +49,7 @@ fun NotesNavHostController(mainViewModel: MainViewModel) {
                 viewModel = mainViewModel
             )
         }
-        composable(NavRoute.NoteScreen.route + "/{$ID}") { backStackEntry ->
+        composable(NavRoute.NoteScreen.route + "/{${ID}}") { backStackEntry ->
             NoteScreen(
                 navController = navController,
                 viewModel = mainViewModel,

@@ -10,7 +10,9 @@ import com.bivizul.notesappcomposemvvm.database.firebase.AppFirebaseRepository
 import com.bivizul.notesappcomposemvvm.database.room.AppRoomDatabase
 import com.bivizul.notesappcomposemvvm.database.room.repository.RoomRepository
 import com.bivizul.notesappcomposemvvm.model.Note
+import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.EMPTY
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.UNKNOWN_VIEWMODEL_CLASS
+import com.bivizul.notesappcomposemvvm.utils.DB_TYPE
 import com.bivizul.notesappcomposemvvm.utils.REPOSITORY
 import com.bivizul.notesappcomposemvvm.utils.TYPE_FIREBASE
 import com.bivizul.notesappcomposemvvm.utils.TYPE_ROOM
@@ -78,6 +80,19 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     // Загрузка заметок из локальной базы данных Room
     fun readAllNotes() = REPOSITORY.readAll
+
+    fun signOut(onSuccess: () -> Unit) {
+        when (DB_TYPE.value) {
+            TYPE_FIREBASE, TYPE_ROOM -> {
+                REPOSITORY.signOut()
+                DB_TYPE.value = EMPTY
+                onSuccess()
+            }
+            else -> {
+                Log.d("checkData", "signOut: ELSE: ${DB_TYPE.value}")
+            }
+        }
+    }
 
 }
 

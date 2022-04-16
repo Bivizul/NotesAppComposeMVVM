@@ -43,7 +43,7 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
     val notes = viewModel.readAllNotes().observeAsState(listOf()).value
 
     // Текущая заметка
-    val note = when(DB_TYPE){
+    val note = when(DB_TYPE.value){
         TYPE_ROOM -> {
             notes.firstOrNull { it.id == noteId?.toInt() } ?: Note()
         }
