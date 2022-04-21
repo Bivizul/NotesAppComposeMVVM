@@ -1,15 +1,14 @@
-package com.bivizul.notesappcomposemvvm.navigation
+package com.bivizul.notesappcomposemvvm.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.bivizul.notesappcomposemvvm.MainViewModel
-import com.bivizul.notesappcomposemvvm.screens.AddScreen
-import com.bivizul.notesappcomposemvvm.screens.MainScreen
-import com.bivizul.notesappcomposemvvm.screens.NoteScreen
-import com.bivizul.notesappcomposemvvm.screens.StartScreen
+import com.bivizul.notesappcomposemvvm.presentation.screens.AddScreen
+import com.bivizul.notesappcomposemvvm.presentation.screens.MainScreen
+import com.bivizul.notesappcomposemvvm.presentation.screens.NoteScreen
+import com.bivizul.notesappcomposemvvm.presentation.screens.StartScreen
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.ID
 import com.bivizul.notesappcomposemvvm.utils.Constants.Screens.ADD_SCREEN
 import com.bivizul.notesappcomposemvvm.utils.Constants.Screens.MAIN_SCREEN

@@ -1,7 +1,7 @@
 package com.bivizul.notesappcomposemvvm.utils
 
 import androidx.compose.runtime.mutableStateOf
-import com.bivizul.notesappcomposemvvm.database.DatabaseRepository
+import com.bivizul.notesappcomposemvvm.domain.repository.DatabaseRepository
 
 const val TYPE_DATABASE = "type_database"
 const val TYPE_ROOM = "type_room"
@@ -33,7 +33,7 @@ object Constants {
         const val NONE = "none"
         const val UPDATE = "UPDATE"
         const val DELETE = "DELETE"
-        const val NAV_BACK = "NAV_BACK"
+        const val NAV_BACK = "BACK"
         const val EDIT_NOTE = "Edit note"
         const val EMPTY = ""
         const val UPDATE_NOTE = "Update note"

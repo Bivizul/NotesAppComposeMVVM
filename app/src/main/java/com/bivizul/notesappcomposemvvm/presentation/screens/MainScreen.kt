@@ -1,4 +1,4 @@
-package com.bivizul.notesappcomposemvvm.screens
+package com.bivizul.notesappcomposemvvm.presentation.screens
 
 import android.app.Application
 import androidx.compose.foundation.clickable
@@ -25,8 +25,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.bivizul.notesappcomposemvvm.MainViewModel
 import com.bivizul.notesappcomposemvvm.MainViewModelFactory
-import com.bivizul.notesappcomposemvvm.model.Note
-import com.bivizul.notesappcomposemvvm.navigation.NavRoute
+import com.bivizul.notesappcomposemvvm.data.model.Note
+import com.bivizul.notesappcomposemvvm.presentation.navigation.NavRoute
 import com.bivizul.notesappcomposemvvm.ui.theme.NotesAppComposeMVVMTheme
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.ADD_ICONS
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.EMPTY
@@ -46,7 +46,8 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
                 navController.navigate(route = NavRoute.AddScreen.route)
             }) {
                 Icon(
-                    imageVector = Icons.Filled.Add, contentDescription = ADD_ICONS,
+                    imageVector = Icons.Filled.Add,
+                    contentDescription = ADD_ICONS,
                     tint = Color.White
                 )
             }

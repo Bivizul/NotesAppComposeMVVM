@@ -1,7 +1,7 @@
-package com.bivizul.notesappcomposemvvm.database.firebase
+package com.bivizul.notesappcomposemvvm.data.database.firebase
 
 import androidx.lifecycle.LiveData
-import com.bivizul.notesappcomposemvvm.model.Note
+import com.bivizul.notesappcomposemvvm.data.model.Note
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

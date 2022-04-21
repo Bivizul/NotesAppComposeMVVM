@@ -1,7 +1,7 @@
-package com.bivizul.notesappcomposemvvm.database
+package com.bivizul.notesappcomposemvvm.domain.repository
 
 import androidx.lifecycle.LiveData
-import com.bivizul.notesappcomposemvvm.model.Note
+import com.bivizul.notesappcomposemvvm.data.model.Note
 
 // Главный репозиторий БД
 // Задаем что будет уметь делать репозиторий

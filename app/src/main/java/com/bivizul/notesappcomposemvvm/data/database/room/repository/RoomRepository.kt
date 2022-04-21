@@ -1,9 +1,9 @@
-package com.bivizul.notesappcomposemvvm.database.room.repository
+package com.bivizul.notesappcomposemvvm.data.database.room.repository
 
 import androidx.lifecycle.LiveData
-import com.bivizul.notesappcomposemvvm.database.DatabaseRepository
-import com.bivizul.notesappcomposemvvm.database.room.dao.NoteRoomDao
-import com.bivizul.notesappcomposemvvm.model.Note
+import com.bivizul.notesappcomposemvvm.domain.repository.DatabaseRepository
+import com.bivizul.notesappcomposemvvm.data.database.room.dao.NoteRoomDao
+import com.bivizul.notesappcomposemvvm.data.model.Note
 
 
 // Локальный репозиторий

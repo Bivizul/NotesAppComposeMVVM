@@ -6,10 +6,10 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.bivizul.notesappcomposemvvm.database.firebase.AppFirebaseRepository
-import com.bivizul.notesappcomposemvvm.database.room.AppRoomDatabase
-import com.bivizul.notesappcomposemvvm.database.room.repository.RoomRepository
-import com.bivizul.notesappcomposemvvm.model.Note
+import com.bivizul.notesappcomposemvvm.data.database.firebase.AppFirebaseRepository
+import com.bivizul.notesappcomposemvvm.data.database.room.AppRoomDatabase
+import com.bivizul.notesappcomposemvvm.data.database.room.repository.RoomRepository
+import com.bivizul.notesappcomposemvvm.data.model.Note
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.EMPTY
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.UNKNOWN_VIEWMODEL_CLASS
 import com.bivizul.notesappcomposemvvm.utils.DB_TYPE

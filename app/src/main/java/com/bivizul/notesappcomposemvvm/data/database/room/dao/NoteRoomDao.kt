@@ -1,8 +1,8 @@
-package com.bivizul.notesappcomposemvvm.database.room.dao
+package com.bivizul.notesappcomposemvvm.data.database.room.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.bivizul.notesappcomposemvvm.model.Note
+import com.bivizul.notesappcomposemvvm.data.model.Note
 
 // Data access object
 // Здесь функции для работы с локальной базой данных

@@ -1,4 +1,4 @@
-package com.bivizul.notesappcomposemvvm
+package com.bivizul.notesappcomposemvvm.presentation
 
 import android.app.Application
 import android.os.Bundle
@@ -17,8 +17,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
-import com.bivizul.notesappcomposemvvm.navigation.NavRoute
-import com.bivizul.notesappcomposemvvm.navigation.NotesNavHostController
+import com.bivizul.notesappcomposemvvm.MainViewModel
+import com.bivizul.notesappcomposemvvm.MainViewModelFactory
+import com.bivizul.notesappcomposemvvm.presentation.navigation.NavRoute
+import com.bivizul.notesappcomposemvvm.presentation.navigation.NotesNavHostController
+import com.bivizul.notesappcomposemvvm.ui.theme.Green
 import com.bivizul.notesappcomposemvvm.ui.theme.NotesAppComposeMVVMTheme
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.NOTES_APP
 import com.bivizul.notesappcomposemvvm.utils.DB_TYPE
@@ -64,7 +67,7 @@ class MainActivity : ComponentActivity() {
 
                             }
                         },
-                        backgroundColor = Color.Blue,
+                        backgroundColor = Green,
                         contentColor = Color.White,
                         elevation = 12.dp
                     )

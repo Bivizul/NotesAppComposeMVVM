@@ -1,4 +1,4 @@
-package com.bivizul.notesappcomposemvvm.screens
+package com.bivizul.notesappcomposemvvm.presentation.screens
 
 import android.app.Application
 import androidx.compose.foundation.layout.*
@@ -18,8 +18,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.bivizul.notesappcomposemvvm.MainViewModel
 import com.bivizul.notesappcomposemvvm.MainViewModelFactory
-import com.bivizul.notesappcomposemvvm.model.Note
-import com.bivizul.notesappcomposemvvm.navigation.NavRoute
+import com.bivizul.notesappcomposemvvm.data.model.Note
+import com.bivizul.notesappcomposemvvm.presentation.navigation.NavRoute
 import com.bivizul.notesappcomposemvvm.ui.theme.NotesAppComposeMVVMTheme
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.DELETE
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.EDIT_NOTE

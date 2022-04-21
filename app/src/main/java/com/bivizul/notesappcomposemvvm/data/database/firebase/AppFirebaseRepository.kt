@@ -1,9 +1,9 @@
-package com.bivizul.notesappcomposemvvm.database.firebase
+package com.bivizul.notesappcomposemvvm.data.database.firebase
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import com.bivizul.notesappcomposemvvm.database.DatabaseRepository
-import com.bivizul.notesappcomposemvvm.model.Note
+import com.bivizul.notesappcomposemvvm.domain.repository.DatabaseRepository
+import com.bivizul.notesappcomposemvvm.data.model.Note
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.SUBTITLE
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.TITLE
 import com.bivizul.notesappcomposemvvm.utils.FIREBASE_ID

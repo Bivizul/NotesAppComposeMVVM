@@ -1,16 +1,16 @@
-package com.bivizul.notesappcomposemvvm.database.room
+package com.bivizul.notesappcomposemvvm.data.database.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.bivizul.notesappcomposemvvm.model.Note
-import com.bivizul.notesappcomposemvvm.database.room.dao.NoteRoomDao
+import com.bivizul.notesappcomposemvvm.data.model.Note
+import com.bivizul.notesappcomposemvvm.data.database.room.dao.NoteRoomDao
 import com.bivizul.notesappcomposemvvm.utils.Constants.Keys.NOTES_DATABASE
 
 // Локальная база данных Room
 // База данных Room
-@Database(entities = [Note::class], version = 1)
+@Database(entities = [Note::class], version = 2)
 abstract class AppRoomDatabase : RoomDatabase() {
 
     abstract fun getRoomDao(): NoteRoomDao

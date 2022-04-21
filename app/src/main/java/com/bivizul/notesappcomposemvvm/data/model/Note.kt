@@ -1,4 +1,4 @@
-package com.bivizul.notesappcomposemvvm.model
+package com.bivizul.notesappcomposemvvm.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
