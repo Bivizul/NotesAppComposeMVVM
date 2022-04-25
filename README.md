@@ -4,6 +4,7 @@
     - Android SDK
     - Kotlin
     - MVVM
+    - Modules
     - Jetpack Compose
     - ViewModel
     - Compose Navigation
