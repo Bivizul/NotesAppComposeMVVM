@@ -1,6 +1,6 @@
-#NotesAppComposeMVVM
+# NotesAppComposeMVVM
 
-- **Стек технологий:**
+- **Technology stack:**
     - Android SDK
     - Kotlin
     - MVVM
