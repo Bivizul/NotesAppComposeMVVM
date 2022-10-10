@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "905797542726",
+    "firebase_url": "https://notes-app-c8ce8-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "notes-app-c8ce8",
+    "storage_bucket": "notes-app-c8ce8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905797542726:android:0514893b90e9d680ce3b47",
+        "android_client_info": {
+          "package_name": "com.bivizul.notesappcomposemvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905797542726-an7tp9tlhlimp3pg47h6dqkrmdfu2fdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAelCBx6lTIxy1zNUz6UMKE0yXUr7xXWB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905797542726-an7tp9tlhlimp3pg47h6dqkrmdfu2fdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
