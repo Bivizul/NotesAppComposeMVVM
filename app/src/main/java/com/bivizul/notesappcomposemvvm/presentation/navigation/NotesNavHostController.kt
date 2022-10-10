@@ -26,10 +26,7 @@ sealed class NavRoute(val route: String) {
 @Composable
 fun NotesNavHostController(mainViewModel: MainViewModel, navController: NavHostController) {
 
-
-    // Задаем navController и стартовый экран
     NavHost(navController = navController, startDestination = NavRoute.StartScreen.route) {
-        // Реализуем навигацию
         composable(NavRoute.StartScreen.route) {
             StartScreen(
                 navController = navController,

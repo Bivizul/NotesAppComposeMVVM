@@ -27,7 +27,7 @@ object Constants {
         const val WHATS_WILL_WE_USE = "What will we use?"
         const val ROOM_DATABASE = "Room database"
         const val FIREBASE_DATABASE = "Firebase database"
-        const val NOTES_APP = "Notes App"
+        const val NOTES_APP = "Notes"
         const val UNKNOWN_VIEWMODEL_CLASS = "Unknown ViewModel Class"
         const val ID = "Id"
         const val NONE = "none"
